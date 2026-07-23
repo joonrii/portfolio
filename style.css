@@ -85,102 +85,47 @@ nav a:hover { color: var(--mint); }
 .hero {
   position: relative;
   z-index: 60;
-  padding: 12vh 6vw 8vh;
-  max-width: 1000px;
-  display: grid;
-  grid-template-columns: 1fr 300px;
-  gap: 40px;
-  align-items: end;
+  padding: 9vh 6vw 6vh;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
-.hero-copy { max-width: 620px; }
-
-/* ---- ESCENARIO PLATAFORMAS ---- */
-.hero-stage {
-  position: relative;
-  height: 320px;
-  width: 100%;
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
   overflow: hidden;
-  background: linear-gradient(#5c94fc 0%, #6ea6fd 60%, #8ec9ff 100%);
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.hero-banner {
+  display: block;
+  width: 100%;
+  height: auto;
   border: 3px solid #10203c;
   box-shadow: 0 0 0 3px var(--panel-line);
-  image-rendering: pixelated;
 }
 
-/* nubes pixeladas que se desplazan */
-.cloud {
-  position: absolute;
-  height: 16px;
-  width: 58px;
-  background: #ffffff;
-}
-.cloud::before {
-  content: "";
-  position: absolute;
-  top: -12px;
-  left: 12px;
-  width: 34px;
-  height: 12px;
-  background: #ffffff;
-}
-.cloud-1 { top: 38px; animation: drift 26s linear infinite; }
-.cloud-2 { top: 84px; transform: scale(0.7); animation: drift 34s linear infinite; animation-delay: -14s; }
-.cloud-3 { top: 20px; transform: scale(0.5); animation: drift 42s linear infinite; animation-delay: -28s; }
+.hero-mobile-copy { display: none; }
 
-@keyframes drift {
-  from { left: 110%; }
-  to { left: -30%; }
+.hero-title-sm {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  margin: 0 0 10px;
+  color: var(--text);
+  text-shadow: 3px 3px 0 var(--coral);
 }
 
-/* colinas escalonadas */
-.hill {
-  position: absolute;
-  bottom: 62px;
-  background: #1e8f3e;
-  clip-path: polygon(0 100%, 0 62%, 12% 62%, 12% 38%, 26% 38%, 26% 14%, 40% 14%, 40% 0, 60% 0, 60% 14%, 74% 14%, 74% 38%, 88% 38%, 88% 62%, 100% 62%, 100% 100%);
-}
-.hill-1 { left: -34px; width: 150px; height: 66px; }
-.hill-2 { right: -46px; width: 190px; height: 88px; background: #17773a; }
-
-/* suelo: hierba + tierra */
-.ground {
-  position: absolute;
-  left: 0; right: 0; bottom: 0;
-  height: 62px;
-}
-.grass {
-  height: 16px;
-  background: #3fbf3f;
-  border-top: 3px solid #8ce88c;
-  box-shadow: inset 0 -4px 0 #2a8f2a;
-}
-.dirt {
-  height: 46px;
-  background: #9c5a3c;
-  background-image:
-    linear-gradient(rgba(0,0,0,.18) 2px, transparent 2px),
-    linear-gradient(90deg, rgba(0,0,0,.18) 2px, transparent 2px);
-  background-size: 16px 16px;
-}
-
-.hero-sprite {
-  position: absolute;
-  bottom: 60px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 150px;
-  height: 244px;
-  background-image: url('sprite.png');
-  background-repeat: no-repeat;
-  background-size: 600px 244px;
-  background-position: 0 0;
-  image-rendering: pixelated;
-  animation: walk-cycle 0.6s steps(4) infinite;
-}
-
-@keyframes walk-cycle {
-  from { background-position: 0 0; }
-  to { background-position: -600px 0; }
+.hero-cta {
+  display: block;
+  width: max-content;
+  margin: 28px auto 0;
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  color: var(--gold);
 }
 
 .eyebrow {
@@ -479,22 +424,16 @@ footer {
 
 @media (max-width: 720px) {
   .hero {
-    grid-template-columns: 1fr;
-    padding-top: 8vh;
+    padding-top: 6vh;
   }
-  .hero-stage {
-    height: 240px;
-    order: -1;
+  .hero-mobile-copy {
+    display: block;
+    text-align: center;
+    margin-top: 26px;
   }
-  .hero-sprite {
-    width: 112px;
-    height: 182px;
-    background-size: 448px 182px;
-    bottom: 58px;
-  }
-  @keyframes walk-cycle {
-    from { background-position: 0 0; }
-    to { background-position: -448px 0; }
+  .hero-mobile-copy .hero-lede {
+    max-width: none;
+    margin-bottom: 0;
   }
 }
 
