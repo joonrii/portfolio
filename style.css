@@ -165,19 +165,19 @@ nav a:hover { color: var(--mint); }
   bottom: 60px;
   left: 50%;
   transform: translateX(-50%);
-  width: 140px;
-  height: 224px;
+  width: 150px;
+  height: 244px;
   background-image: url('sprite.png');
   background-repeat: no-repeat;
-  background-size: 560px 224px;
+  background-size: 1200px 244px;
   background-position: 0 0;
   image-rendering: pixelated;
-  animation: walk-cycle 0.6s steps(4) infinite;
+  animation: walk-cycle 0.8s steps(8) infinite;
 }
 
 @keyframes walk-cycle {
   from { background-position: 0 0; }
-  to { background-position: -560px 0; }
+  to { background-position: -1200px 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -488,14 +488,14 @@ footer {
     order: -1;
   }
   .hero-sprite {
-    width: 105px;
-    height: 168px;
-    background-size: 420px 168px;
+    width: 112px;
+    height: 182px;
+    background-size: 896px 182px;
     bottom: 58px;
   }
   @keyframes walk-cycle {
     from { background-position: 0 0; }
-    to { background-position: -420px 0; }
+    to { background-position: -896px 0; }
   }
 }
 
