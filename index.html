@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css" />
-<link rel="preload" href="sprite.png" as="image" />
+<link rel="preload" href="hero.webp" as="image" />
 </head>
 <body>
 
@@ -26,31 +26,15 @@
   <main>
     <!-- PLAYER CARD -->
     <section class="hero" id="inicio">
-      <div class="hero-copy">
+      <h1 class="sr-only">Jon Rio — Data Analyst</h1>
+      <img class="hero-banner" src="hero.webp" alt="Jon Rio, Data Analyst — convirtiendo datos en información para tomar mejores decisiones" />
+      <div class="hero-mobile-copy" aria-hidden="true">
         <p class="eyebrow">// SAVE FILE 01 — CONTINUAR</p>
-        <h1>JON RIO</h1>
-        <p class="hero-role">Analista de Datos <span class="dot">·</span> Vibe Coder</p>
-        <p class="hero-lede">
-          Convierto datos en decisiones y prompts en producto. Cada proyecto de aquí abajo
-          es un nivel: unos ya están completados y desplegados, otros siguen bloqueados —
-          en desarrollo.
-        </p>
-
-        <a class="hero-cta blink" href="#niveles">▸ PULSA PARA VER NIVELES</a>
+        <p class="hero-title-sm">JON RIO</p>
+        <p class="hero-role">Data Analyst</p>
+        <p class="hero-lede">Convirtiendo datos en información para tomar mejores decisiones.</p>
       </div>
-
-      <div class="hero-stage" aria-hidden="true">
-        <div class="cloud cloud-1"></div>
-        <div class="cloud cloud-2"></div>
-        <div class="cloud cloud-3"></div>
-        <div class="hill hill-1"></div>
-        <div class="hill hill-2"></div>
-        <div class="hero-sprite"></div>
-        <div class="ground">
-          <div class="grass"></div>
-          <div class="dirt"></div>
-        </div>
-      </div>
+      <a class="hero-cta blink" href="#niveles">▸ PULSA PARA VER NIVELES</a>
     </section>
 
     <!-- LEVEL MAP -->
