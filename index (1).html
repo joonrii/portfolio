@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Jon Rio — Analista de Datos // Save File</title>
+<meta name="description" content="Portfolio de Jon Rio, analista de datos. Niveles: Eclipse Solar España, Recomendador y más en camino." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+<link rel="preload" href="sprite.png" as="image" />
+</head>
+<body>
+
+  <div class="scanlines" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <span class="brand">JON RIO<span class="brand-blip">_</span></span>
+    <nav>
+      <a href="#niveles">Mapa</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- PLAYER CARD -->
+    <section class="hero" id="inicio">
+      <div class="hero-copy">
+        <p class="eyebrow">// SAVE FILE 01 — CONTINUAR</p>
+        <h1>JON RIO</h1>
+        <p class="hero-role">Analista de Datos <span class="dot">·</span> Vibe Coder</p>
+        <p class="hero-lede">
+          Convierto datos en decisiones y prompts en producto. Cada proyecto de aquí abajo
+          es un nivel: unos ya están completados y desplegados, otros siguen bloqueados —
+          en desarrollo.
+        </p>
+
+        <a class="hero-cta blink" href="#niveles">▸ PULSA PARA VER NIVELES</a>
+      </div>
+
+      <div class="hero-stage" aria-hidden="true">
+        <div class="hero-sprite"></div>
+        <div class="hero-ground"></div>
+      </div>
+    </section>
+
+    <!-- LEVEL MAP -->
+    <section class="niveles" id="niveles">
+      <p class="section-label">MAPA DE NIVELES</p>
+      <h2>2 / 4 completados</h2>
+
+      <div class="level-path">
+
+        <article class="level level-done">
+          <div class="level-node">
+            <span class="level-num">01</span>
+            <svg class="level-icon" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="3.2" fill="currentColor"/></svg>
+          </div>
+          <div class="level-card">
+            <div class="project-visual viz-eclipse" aria-hidden="true">
+              <div class="eclipse-strip">
+                <span class="e-phase" style="--cut:0%"></span>
+                <span class="e-phase" style="--cut:25%"></span>
+                <span class="e-phase" style="--cut:55%"></span>
+                <span class="e-phase" style="--cut:85%"></span>
+                <span class="e-phase" style="--cut:100%"></span>
+              </div>
+            </div>
+            <p class="level-status status-done">✓ Completado</p>
+            <h3>Eclipse Solar España</h3>
+            <p>Horarios, trayectoria y datos clave del eclipse solar visible desde España, en una página pensada para consultarse en segundos.</p>
+            <div class="level-links">
+              <a class="btn btn-primary" href="https://eclipsesolarespana-wine.vercel.app" target="_blank" rel="noopener">▶ Ver demo</a>
+              <a class="btn btn-ghost" href="https://github.com/joonrii/eclipsesolarespana" target="_blank" rel="noopener">Ver código ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="level level-done">
+          <div class="level-node">
+            <span class="level-num">02</span>
+            <svg class="level-icon" viewBox="0 0 24 24" fill="none"><path d="M12 3l2.4 5.2 5.6.6-4.2 3.8 1.2 5.6L12 15.8 6.9 18.2 8.1 12.6 4 8.8l5.6-.6L12 3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="level-card">
+            <div class="project-visual viz-recomendador" aria-hidden="true">
+              <div class="rec-row"><span class="rec-bar" style="width:88%"></span><span class="rec-stars">★★★★★</span></div>
+              <div class="rec-row"><span class="rec-bar" style="width:64%"></span><span class="rec-stars">★★★★☆</span></div>
+              <div class="rec-row"><span class="rec-bar" style="width:45%"></span><span class="rec-stars">★★★☆☆</span></div>
+            </div>
+            <p class="level-status status-done">✓ Completado</p>
+            <h3>Recomendador</h3>
+            <p>Motor de recomendaciones que cruza tus preferencias con un dataset para sugerirte opciones afines. Incluye una V2 con mejoras sobre la primera versión.</p>
+            <div class="level-links">
+              <a class="btn btn-primary" href="https://recomendador-ten.vercel.app" target="_blank" rel="noopener">▶ Ver demo</a>
+              <a class="btn btn-ghost" href="https://github.com/joonrii/recomendador" target="_blank" rel="noopener">Ver código ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="level level-locked">
+          <div class="level-node">
+            <span class="level-num">03</span>
+            <svg class="level-icon" viewBox="0 0 24 24" fill="none"><path d="M12 2c-2.8 0-4 2-4 4v2H6v3h12v-3h-2V6c0-2-1.2-4-4-4z" stroke="currentColor" stroke-width="1.6"/><rect x="4" y="11" width="16" height="10" rx="1.5" stroke="currentColor" stroke-width="1.6"/></svg>
+          </div>
+          <div class="level-card">
+            <div class="project-visual viz-gasolineras" aria-hidden="true">
+              <div class="gas-bars">
+                <span class="gas-bar" style="height:40%"></span>
+                <span class="gas-bar" style="height:65%"></span>
+                <span class="gas-bar gas-cheapest" style="height:28%"></span>
+                <span class="gas-bar" style="height:55%"></span>
+                <span class="gas-bar" style="height:48%"></span>
+              </div>
+            </div>
+            <p class="level-status status-locked">🔒 Bloqueado — próximamente</p>
+            <h3>Gasolineras Baratas</h3>
+            <p>Buscador de gasolineras más baratas cerca de ti, usando la API pública de precios de carburantes. En construcción.</p>
+            <div class="level-links">
+              <span class="btn btn-disabled">▶ Aún no disponible</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="level level-locked">
+          <div class="level-node">
+            <span class="level-num">04</span>
+            <svg class="level-icon" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.6-9.4-9C1 8.4 3 5 6.4 5c1.9 0 3.2 1 4 2.2C11.2 6 12.5 5 14.4 5 17.8 5 19.8 8.4 18 12c-2.4 4.4-6 9-6 9z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="level-card">
+            <div class="project-visual viz-pasos" aria-hidden="true">
+              <svg viewBox="0 0 80 80" width="72" height="72">
+                <circle cx="40" cy="40" r="32" fill="none" stroke="#362a70" stroke-width="8"/>
+                <circle cx="40" cy="40" r="32" fill="none" stroke="#4A4370" stroke-width="8" stroke-linecap="round" stroke-dasharray="201" stroke-dashoffset="90" transform="rotate(-90 40 40)"/>
+              </svg>
+            </div>
+            <p class="level-status status-locked">🔒 Bloqueado — próximamente</p>
+            <h3>Contador de Pasos</h3>
+            <p>Dashboard que lee datos de actividad diaria (pasos, distancia, calorías) desde una app de salud y los convierte en tendencias legibles. En construcción.</p>
+            <div class="level-links">
+              <span class="btn btn-disabled">▶ Aún no disponible</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- BIO -->
+    <section class="sobre-mi">
+      <p class="section-label">CHARACTER INFO</p>
+      <h2>Sobre mí</h2>
+      <p>
+        Escribo esta sección con un texto de partida — cámbiala por tu historia real:
+        de qué vienes, qué analizas en tu día a día, y por qué empezaste a construir
+        estos niveles con vibe coding.
+      </p>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contacto" id="contacto">
+      <p class="section-label">CONTINUAR</p>
+      <h2>¿Seguimos jugando?</h2>
+      <p>Escríbeme si quieres hablar de datos, o revisa el código de lo que construyo.</p>
+      <div class="contact-links">
+        <a href="mailto:tu-email@ejemplo.com">tu-email@ejemplo.com</a>
+        <a href="https://github.com/joonrii" target="_blank" rel="noopener">GitHub ↗</a>
+        <a href="https://linkedin.com/in/tu-usuario" target="_blank" rel="noopener">LinkedIn ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>GAME OVER? NO — TO BE CONTINUED. Hecho con código, desplegado en Vercel.</p>
+  </footer>
+
+</body>
+</html>
