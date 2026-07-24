@@ -199,75 +199,57 @@ section h2 {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 20px;
 }
-
-.level-path::before {
-  content: "";
-  position: absolute;
-  left: 39px;
-  top: 20px;
-  bottom: 20px;
-  width: 2px;
-  background: repeating-linear-gradient(to bottom, var(--panel-line) 0 6px, transparent 6px 12px);
-}
-
-.level {
-  position: relative;
-  display: grid;
-  grid-template-columns: 80px 1fr;
-  gap: 24px;
-  align-items: start;
-}
-
-.level-node {
-  position: relative;
-  z-index: 2;
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  background: var(--panel);
-  border: 2px solid var(--mint);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: var(--mint);
-}
-
-.level-locked .level-node {
-  border-color: var(--locked);
-  color: var(--locked);
-}
-
-.level-num {
-  font-family: var(--font-display);
-  font-size: 0.6rem;
-  margin-bottom: 4px;
-}
-
-.level-icon { width: 24px; height: 24px; }
 
 .level-card {
   position: relative;
+  display: flex;
   background: var(--panel);
   border: 1px solid var(--panel-line);
   border-radius: 12px;
-  padding: 26px 28px;
+  overflow: hidden;
 }
 
-.project-visual {
-  float: right;
-  width: 132px;
-  height: 84px;
-  margin: 0 0 14px 20px;
-  border: 1px solid var(--panel-line);
-  border-radius: 8px;
-  background: var(--bg-alt);
+.level-thumb {
+  position: relative;
+  flex: none;
+  width: 150px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px;
+  gap: 8px;
+  padding: 14px;
+}
+
+.level-thumb-num {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  font-family: var(--font-display);
+  font-size: 0.58rem;
+  color: var(--mint);
+  background: rgba(10, 8, 24, 0.55);
+  padding: 3px 6px;
+  border-radius: 4px;
+}
+
+.level-locked .level-thumb-num { color: var(--locked); }
+
+.viz-eclipse { background: radial-gradient(circle at 30% 30%, #3a2f66, var(--bg-alt)); }
+.viz-recomendador {
+  background: var(--bg-alt);
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 16px 18px;
+}
+.viz-gasolineras { background: #0A1E1A; }
+.viz-pasos { background: var(--bg-alt); }
+
+.level-body {
+  flex: 1;
+  min-width: 0;
+  padding: 20px 24px;
 }
 
 .eclipse-strip {
@@ -334,8 +316,6 @@ section h2 {
 .gas-cheapest {
   background: var(--mint);
 }
-
-.viz-pasos svg { display: block; }
 
 .level-locked .level-card {
   opacity: 0.6;
@@ -440,10 +420,8 @@ footer {
 }
 
 @media (max-width: 640px) {
-  .level { grid-template-columns: 56px 1fr; gap: 16px; }
-  .level-node { width: 56px; height: 56px; }
-  .level-icon { width: 18px; height: 18px; }
-  .level-path::before { left: 27px; }
-  .project-visual { float: none; width: 100%; margin: 0 0 16px; }
+  .level-card { flex-direction: column; }
+  .level-thumb { width: 100%; height: 90px; }
+  .level-body { padding: 16px 18px; }
   nav a { margin-left: 14px; font-size: 0.75rem; }
 }
