@@ -14,6 +14,17 @@
 <body>
 
   <div class="scanlines" aria-hidden="true"></div>
+  <div class="crt-boot" aria-hidden="true"></div>
+  <div class="pixel-dust" aria-hidden="true">
+    <span class="dust d1"></span>
+    <span class="dust d2"></span>
+    <span class="dust d3"></span>
+    <span class="dust d4"></span>
+    <span class="dust d5"></span>
+    <span class="dust d6"></span>
+    <span class="dust d7"></span>
+    <span class="dust d8"></span>
+  </div>
 
   <header class="site-header">
     <span class="brand">JON RIO<span class="brand-blip">_</span></span>
@@ -149,6 +160,25 @@
   <footer>
     <p>GAME OVER? NO — TO BE CONTINUED. Hecho con código, desplegado en Vercel.</p>
   </footer>
-
+  <script>
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      var levels = document.querySelectorAll('.level');
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('in-view');
+              io.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.15 });
+        levels.forEach(function (el) { io.observe(el); });
+      } else {
+        levels.forEach(function (el) { el.classList.add('in-view'); });
+      }
+    } else {
+      document.querySelectorAll('.level').forEach(function (el) { el.classList.add('in-view'); });
+    }
+  </script>
 </body>
 </html>
