@@ -49,7 +49,7 @@ a { color: inherit; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .cloud, .blink, .brand-blip { animation: none !important; }
+  .cloud, .blink, .brand-blip, .hero-mobile-sprite { animation: none !important; }
   * { transition: none !important; }
   html { scroll-behavior: auto; }
 }
@@ -109,6 +109,8 @@ nav a:hover { color: var(--mint); }
 }
 
 .hero-mobile-copy { display: none; }
+
+.hero-mobile-sprite { display: none; }
 
 .hero-title-sm {
   font-family: var(--font-display);
@@ -393,10 +395,29 @@ footer {
   .hero {
     padding-top: 6vh;
   }
+  .hero-banner {
+    display: none;
+  }
+  .hero-mobile-sprite {
+    display: block;
+    width: 130px;
+    height: 211px;
+    margin: 0 auto;
+    background-image: url('sprite.png');
+    background-repeat: no-repeat;
+    background-size: 520px 211px;
+    background-position: 0 0;
+    image-rendering: pixelated;
+    animation: mobile-walk-cycle 0.7s steps(4) infinite;
+  }
+  @keyframes mobile-walk-cycle {
+    from { background-position: 0 0; }
+    to { background-position: -520px 0; }
+  }
   .hero-mobile-copy {
     display: block;
     text-align: center;
-    margin-top: 26px;
+    margin-top: 8px;
     padding: 0 6vw;
   }
   .hero-mobile-copy .hero-lede {
