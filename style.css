@@ -197,21 +197,74 @@ section h2 {
   color: var(--text);
 }
 
-.level-path {
-  position: relative;
+.bento {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-flow: dense;
+  align-items: stretch;
+  gap: 16px;
+}
+
+.bento-featured { grid-column: span 2; }
+.bento-wide { grid-column: span 2; }
+.bento-square { grid-column: span 1; }
+
+.level, .bento-tile { height: 100%; }
+
+.bento-tile {
+  background: var(--panel);
+  border: 1px solid var(--panel-line);
+  border-radius: 12px;
+  padding: 20px 22px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  justify-content: center;
 }
+.bento-tile h3 {
+  font-size: 1.1rem;
+  margin: 0 0 10px;
+  color: var(--text);
+}
+.bento-bio p {
+  color: var(--text-muted);
+  font-size: 0.86rem;
+  margin: 0 0 10px;
+}
+.bento-bio p:last-child { margin-bottom: 0; }
+.bento-contact p { margin: 0 0 14px; color: var(--text-muted); font-size: 0.86rem; }
 
 .level-card {
   position: relative;
   display: flex;
+  height: 100%;
   background: var(--panel);
   border: 1px solid var(--panel-line);
   border-radius: 12px;
   overflow: hidden;
 }
+
+.bento-square .level-card,
+.bento-wide .level-card {
+  flex-direction: column;
+}
+.bento-square .level-thumb {
+  width: 100%;
+  height: 80px;
+  padding: 8px;
+}
+.bento-square .pixel-icon { width: 32px; height: 32px; }
+.bento-square .level-body { padding: 14px 16px; }
+.bento-square .level-status { font-size: 0.5rem; margin-bottom: 8px; }
+.bento-square .level-card h3 { font-size: 1rem; margin-bottom: 6px; }
+.bento-square .level-card p {
+  font-size: 0.8rem;
+  margin-bottom: 12px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.bento-square .btn { font-size: 0.72rem; padding: 8px 12px; }
 
 .level-thumb {
   position: relative;
@@ -361,12 +414,6 @@ section h2 {
   font-weight: 700;
 }
 
-.sobre-mi p, .contacto p {
-  color: var(--text-muted);
-  max-width: 620px;
-  font-size: 0.98rem;
-}
-
 .contact-links {
   display: flex;
   gap: 26px;
@@ -427,9 +474,12 @@ footer {
 }
 
 @media (max-width: 640px) {
+  .bento { grid-template-columns: 1fr; }
+  .bento-featured, .bento-wide, .bento-square { grid-column: span 1; }
   .level-card { flex-direction: column; }
   .level-thumb { width: 100%; height: 90px; }
   .level-body { padding: 16px 18px; }
+  .bento-square .level-card p { -webkit-line-clamp: initial; }
   nav a { margin-left: 14px; font-size: 0.75rem; }
 }
 
