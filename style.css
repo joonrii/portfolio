@@ -411,3 +411,104 @@ footer {
   .level-body { padding: 16px 18px; }
   nav a { margin-left: 14px; font-size: 0.75rem; }
 }
+
+/* ============================================
+   EFECTOS VISUALES
+   ============================================ */
+
+/* --- Cursor personalizado en píxeles --- */
+html {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><rect x="0" y="0" width="6" height="6" fill="%232CE8C4"/><rect x="6" y="6" width="6" height="6" fill="%23FFD166"/></svg>') 2 2, auto;
+}
+a, button, .btn, .hero-cta {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><rect x="0" y="0" width="7" height="7" fill="%23FF5D73"/><rect x="7" y="7" width="7" height="7" fill="%23FFD166"/></svg>') 2 2, pointer;
+}
+
+/* --- Polvo de píxeles flotando --- */
+.pixel-dust {
+  position: fixed;
+  inset: 0;
+  z-index: 45;
+  pointer-events: none;
+  overflow: hidden;
+}
+.dust {
+  position: absolute;
+  bottom: -10px;
+  width: 3px;
+  height: 3px;
+  background: var(--mint);
+  opacity: 0;
+  animation: dust-rise linear infinite;
+}
+.d1 { left: 6%;  background: var(--mint);  animation-duration: 14s; animation-delay: 0s; }
+.d2 { left: 18%; background: var(--gold);  animation-duration: 18s; animation-delay: 2s; }
+.d3 { left: 32%; background: var(--coral); animation-duration: 16s; animation-delay: 5s; }
+.d4 { left: 47%; background: var(--mint);  animation-duration: 20s; animation-delay: 1s; }
+.d5 { left: 61%; background: var(--gold);  animation-duration: 15s; animation-delay: 7s; }
+.d6 { left: 74%; background: var(--coral); animation-duration: 19s; animation-delay: 3s; }
+.d7 { left: 86%; background: var(--mint);  animation-duration: 17s; animation-delay: 9s; }
+.d8 { left: 94%; background: var(--gold);  animation-duration: 21s; animation-delay: 4s; }
+
+@keyframes dust-rise {
+  0%   { transform: translateY(0) translateX(0); opacity: 0; }
+  8%   { opacity: 0.55; }
+  92%  { opacity: 0.35; }
+  100% { transform: translateY(-100vh) translateX(24px); opacity: 0; }
+}
+
+/* --- Tarjetas con levitación al hover --- */
+.level-card {
+  transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+}
+.level:not(.level-locked) .level-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--mint);
+  box-shadow: 0 14px 26px -14px rgba(44, 232, 196, 0.35);
+}
+.level-locked .level-card:hover {
+  border-color: var(--coral);
+}
+
+/* --- Botones con squish retro --- */
+.btn, .hero-cta {
+  transition: transform 0.08s ease;
+  display: inline-block;
+}
+.btn:active, .hero-cta:active {
+  transform: scale(0.92);
+}
+
+/* --- Niveles aparecen al hacer scroll --- */
+.level {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+.level.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Efecto de encendido CRT al cargar --- */
+.crt-boot {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  pointer-events: none;
+  background: #000;
+  animation: crt-boot-seq 0.7s ease-out forwards;
+}
+@keyframes crt-boot-seq {
+  0%   { opacity: 1; transform: scaleY(1); }
+  40%  { opacity: 1; transform: scaleY(0.01); }
+  70%  { opacity: 1; transform: scaleY(0.01); }
+  100% { opacity: 0; transform: scaleY(0.01); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dust { animation: none; opacity: 0; }
+  .crt-boot { animation: none; opacity: 0; }
+  .level { opacity: 1; transform: none; transition: none; }
+  .level-card:hover { transform: none; }
+}
