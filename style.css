@@ -179,7 +179,7 @@ a { text-decoration: none; }
   gap: 28px;
 }
 
-.project-card { display: flex; flex-direction: column; }
+.project-card { display: flex; flex-direction: column; height: 100%; }
 .project-thumb {
   width: 100%;
   aspect-ratio: 16 / 10;
@@ -215,6 +215,8 @@ a { text-decoration: none; }
   background: var(--coral-400);
   padding: 8px 16px;
   border-radius: 999px;
+  width: fit-content;
+  margin-top: auto;
   transition: background 0.15s ease, transform 0.15s ease;
 }
 .read-more svg { transition: transform 0.2s ease; }
