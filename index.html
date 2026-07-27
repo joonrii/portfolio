@@ -17,8 +17,9 @@
   <aside class="sidebar">
     <img class="avatar" src="avatar.jpg" alt="Jon Rio" />
     <h1 class="name">Jon Rio</h1>
-    <p class="role">Data Analyst en Inetum</p>
+    <p class="role" id="role-text">Data Analyst en Inetum</p>
     <p class="location">Bilbao, España</p>
+    <p class="status-line"><span class="status-dot" aria-hidden="true"></span>Disponible para hablar de datos</p>
 
     <div class="social-row">
       <a href="https://www.linkedin.com/in/jonriomunoz" target="_blank" rel="noopener" aria-label="LinkedIn">
@@ -28,7 +29,7 @@
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg>
       </a>
     </div>
-    <a class="email-btn" href="mailto:jonrio11@gmail.com">Escríbeme</a>
+    <a class="email-btn" id="cta-escribeme" href="mailto:jonrio11@gmail.com">Escríbeme</a>
 
     <div class="sidebar-block">
       <h6>Sobre mí</h6>
@@ -55,21 +56,21 @@
       <div class="project-grid">
 
         <article class="project-card">
-          <img class="project-thumb" src="proj-eclipse.jpg" alt="Eclipse solar" loading="lazy" />
+          <div class="thumb-wrap"><img class="project-thumb" src="proj-eclipse.jpg" alt="Eclipse solar" loading="lazy" /></div>
           <h3>Eclipse Solar España</h3>
           <p>Horarios, trayectoria y datos clave del eclipse solar visible desde España, en una página pensada para consultarse en segundos.</p>
           <a class="read-more" href="https://eclipsesolarespana-wine.vercel.app" target="_blank" rel="noopener">Ver demo →</a>
         </article>
 
         <article class="project-card">
-          <img class="project-thumb" src="proj-recomendador.jpg" alt="Pantallas de streaming, mando a distancia" loading="lazy" />
+          <div class="thumb-wrap"><img class="project-thumb" src="proj-recomendador.jpg" alt="Pantallas de streaming, mando a distancia" loading="lazy" /></div>
           <h3>Recomendador</h3>
           <p>Motor de recomendaciones que cruza tus preferencias con un dataset para sugerirte opciones afines. Incluye una V2 con mejoras sobre la primera versión.</p>
           <a class="read-more" href="https://recomendador-ten.vercel.app" target="_blank" rel="noopener">Ver demo →</a>
         </article>
 
         <article class="project-card">
-          <img class="project-thumb" src="proj-gasolina.jpg" alt="Repostando gasolina" loading="lazy" />
+          <div class="thumb-wrap"><img class="project-thumb" src="proj-gasolina.jpg" alt="Repostando gasolina" loading="lazy" /></div>
           <h3>Gasolina Tracker</h3>
           <p>Precios oficiales de gasolineras en Euskadi y Navarra: mapa interactivo, filtro por combustible y radio de distancia, y evolución histórica del precio por territorio.</p>
           <a class="read-more" href="https://gasoradar-teal.vercel.app/" target="_blank" rel="noopener">Ver demo →</a>
@@ -103,6 +104,58 @@
   </main>
 
 </div>
+
+<script>
+  // --- Subtítulo rotativo ---
+  (function () {
+    var roleEl = document.getElementById('role-text');
+    var variants = ['Data Analyst en Inetum', 'Vibe Coder', 'Convierto datos en decisiones'];
+    var i = 0;
+    if (roleEl && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      setInterval(function () {
+        i = (i + 1) % variants.length;
+        roleEl.style.opacity = '0';
+        setTimeout(function () {
+          roleEl.textContent = variants[i];
+          roleEl.style.opacity = '1';
+        }, 220);
+      }, 3200);
+    }
+  })();
+
+  // --- Confeti al pulsar Escríbeme ---
+  (function () {
+    var btn = document.getElementById('cta-escribeme');
+    if (!btn) return;
+    var colors = ['#d85a30', '#f0997b', '#712b13', '#e8d9c5', '#3a332a'];
+    btn.addEventListener('click', function () {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      var rect = btn.getBoundingClientRect();
+      var originX = rect.left + rect.width / 2;
+      var originY = rect.top + rect.height / 2;
+      for (var n = 0; n < 22; n++) {
+        var piece = document.createElement('span');
+        piece.className = 'confetti-piece';
+        piece.style.left = originX + 'px';
+        piece.style.top = originY + 'px';
+        piece.style.background = colors[Math.floor(Math.random() * colors.length)];
+        var angle = Math.random() * Math.PI * 2;
+        var dist = 70 + Math.random() * 90;
+        piece.style.setProperty('--dx', (Math.cos(angle) * dist) + 'px');
+        piece.style.setProperty('--dy', (Math.sin(angle) * dist - 40) + 'px');
+        piece.style.setProperty('--rot', (Math.random() * 480 - 240) + 'deg');
+        document.body.appendChild(piece);
+        (function (el) {
+          setTimeout(function () { el.remove(); }, 700);
+        })(piece);
+      }
+    });
+  })();
+
+  // --- easter egg ---
+  console.log('%c👋 Hola, curioso.', 'font-size:14px;font-weight:600;color:#d85a30;');
+  console.log('Si estás mirando el código, seguramente también te gusta construir cosas. Hablemos: jonrio11@gmail.com');
+</script>
 
 </body>
 </html>
