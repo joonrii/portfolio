@@ -206,6 +206,25 @@
   // --- easter egg ---
   console.log('%c👋 Hola, curioso.', 'font-size:14px;font-weight:600;color:#d85a30;');
   console.log('Si estás mirando el código, seguramente también te gusta construir cosas. Hablemos: jonrio11@gmail.com');
+
+  // --- Tilt 3D en tarjetas de proyecto ---
+  (function () {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var MAX_TILT = 7;
+    document.querySelectorAll('.project-card').forEach(function (card) {
+      card.addEventListener('mousemove', function (e) {
+        var r = card.getBoundingClientRect();
+        var px = (e.clientX - r.left) / r.width;
+        var py = (e.clientY - r.top) / r.height;
+        var rotY = (px - 0.5) * MAX_TILT * 2;
+        var rotX = (0.5 - py) * MAX_TILT * 2;
+        card.style.transform = 'perspective(800px) rotateX(' + rotX.toFixed(2) + 'deg) rotateY(' + rotY.toFixed(2) + 'deg)';
+      });
+      card.addEventListener('mouseleave', function () {
+        card.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg)';
+      });
+    });
+  })();
 </script>
 
 </body>
