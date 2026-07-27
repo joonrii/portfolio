@@ -22,10 +22,13 @@ Sin `package.json`, sin dependencias, sin paso de compilación. Abrir `index.htm
 
 ## Secciones
 
-- **Barra lateral** — foto, nombre, rol, ubicación, contacto y skills.
-- **Proyectos** — tarjetas con imagen, descripción y enlace a cada demo desplegada.
-- **Experiencia** — puesto actual.
-- **Contacto** — email y LinkedIn.
+| Sección | Contenido |
+|---|---|
+| **Barra lateral** | Foto, nombre, rol (rotativo), ubicación, estado, contacto y skills |
+| **Proyectos** | Tarjetas con imagen, descripción y enlace a cada demo desplegada |
+| **Experiencia** | Trayectoria laboral completa, en línea de tiempo |
+| **Educación** | Estudios, en formato de tarjetas |
+| **Contacto** | Email y LinkedIn |
 
 ## Editar contenido
 
@@ -39,7 +42,4 @@ Todo el texto e imágenes están directamente en `index.html` — no hay CMS ni 
 
 Este repo está conectado a Vercel — cualquier push a `main` despliega automáticamente en unos 30 segundos. No hace falta configurar nada más (framework: *Other*, sin build command).
 
-## Pendiente
 
-- [ ] Historial de experiencia completo (fechas y puestos anteriores)
-- [ ] Confirmar stack técnico real de cada proyecto para sus etiquetas
