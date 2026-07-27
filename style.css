@@ -83,10 +83,13 @@ a { text-decoration: none; }
 }
 
 .thumb-wrap {
+  display: block;
   overflow: hidden;
   border-radius: var(--radius);
   margin-bottom: 14px;
+  position: relative;
 }
+.thumb-wrap:focus-visible { outline: 2px solid var(--coral-400); outline-offset: 2px; }
 .thumb-wrap .project-thumb {
   margin-bottom: 0;
   transition: transform 0.35s ease;
@@ -202,8 +205,22 @@ a { text-decoration: none; }
   opacity: 0.85;
   margin-bottom: 10px;
 }
-.read-more { font-size: 14px; font-weight: 500; color: var(--coral-400); }
-.read-more:hover { color: var(--coral-600); }
+.read-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #fff;
+  background: var(--coral-400);
+  padding: 8px 16px;
+  border-radius: 999px;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+.read-more svg { transition: transform 0.2s ease; }
+.read-more:hover { background: var(--coral-600); transform: translateY(-1px); }
+.read-more:hover svg { transform: translate(2px, -2px); }
+.read-more:active { transform: translateY(0); }
 
 /* experiencia */
 .exp-dates { font-size: 13px; color: var(--text-muted); margin-bottom: 4px; }
