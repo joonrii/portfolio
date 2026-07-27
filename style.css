@@ -1,108 +1,175 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Jon Rio — Data Analyst</title>
-<meta name="description" content="Jon Rio, Data Analyst en Inetum, Bilbao. Portfolio de proyectos de datos." />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css" />
-</head>
-<body>
+:root {
+  --sidebar-bg: #faf6f0;
+  --sidebar-border: #ece4d8;
+  --main-bg: #fffdfa;
+  --text-primary: #3a332a;
+  --text-secondary: #6b6152;
+  --text-muted: #9c8f7c;
+  --avatar-bg: #e8d9c5;
+  --coral-50: #faece7;
+  --coral-100: #f5c4b3;
+  --coral-400: #d85a30;
+  --coral-600: #993c1d;
+  --coral-800: #712b13;
+  --card-border: #ece4d8;
+  --radius: 10px;
+}
 
-<div class="layout">
+* , *::before, *::after { box-sizing: border-box; }
 
-  <aside class="sidebar">
-    <div class="avatar">JR</div>
-    <h1 class="name">Jon Rio</h1>
-    <p class="role">Data Analyst en Inetum</p>
-    <p class="location">Bilbao, España</p>
+body {
+  margin: 0;
+  background: var(--main-bg);
+  color: var(--text-primary);
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+}
 
-    <div class="social-row">
-      <a href="https://www.linkedin.com/in/jonriomunoz" target="_blank" rel="noopener" aria-label="LinkedIn">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
-      </a>
-      <a href="mailto:jonrio11@gmail.com" aria-label="Email">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg>
-      </a>
-    </div>
-    <a class="email-btn" href="mailto:jonrio11@gmail.com">Escríbeme</a>
+h1, h2, h3, h6 { font-family: "Inter", system-ui, sans-serif; margin: 0; }
+p { margin: 0; }
+a { text-decoration: none; }
 
-    <div class="sidebar-block">
-      <h6>Sobre mí</h6>
-      <p>Data Analyst en Inetum. Graduado en ADE, con un Máster en Business Analytics por Mondragon Unibertsitatea. Convierto datos en decisiones y disfruto construyendo mis propios proyectos con vibe coding.</p>
-    </div>
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
 
-    <div class="sidebar-block">
-      <h6>Skills</h6>
-      <div class="tag-row">
-        <span class="skill-tag">Python</span>
-        <span class="skill-tag">SQL</span>
-        <span class="skill-tag">Power BI</span>
-        <span class="skill-tag">Tableau</span>
-        <span class="skill-tag">Looker</span>
-        <span class="skill-tag">BigQuery</span>
-      </div>
-    </div>
-  </aside>
+/* sidebar */
+.sidebar {
+  flex: 0 0 300px;
+  background: var(--sidebar-bg);
+  border-right: 1px solid var(--sidebar-border);
+  padding: 40px 32px;
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
+  height: 100vh;
+  overflow-y: auto;
+}
 
-  <main class="main">
+.avatar {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  background: var(--avatar-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--coral-800);
+  margin-bottom: 18px;
+}
 
-    <section id="proyectos">
-      <h6 class="section-label">Proyectos</h6>
-      <div class="project-grid">
+.name { font-size: 24px; font-weight: 600; margin-bottom: 6px; }
+.role { font-size: 15px; color: var(--text-primary); margin-bottom: 3px; }
+.location { font-size: 13px; color: var(--text-muted); margin-bottom: 18px; }
 
-        <article class="project-card">
-          <div class="project-thumb thumb-eclipse"></div>
-          <h3>Eclipse Solar España</h3>
-          <p>Horarios, trayectoria y datos clave del eclipse solar visible desde España, en una página pensada para consultarse en segundos.</p>
-          <a class="read-more" href="https://eclipsesolarespana-wine.vercel.app" target="_blank" rel="noopener">Ver demo →</a>
-        </article>
+.social-row { display: flex; gap: 14px; margin-bottom: 16px; }
+.social-row a { color: var(--text-primary); display: inline-flex; }
+.social-row a:hover { color: var(--coral-400); }
 
-        <article class="project-card">
-          <div class="project-thumb thumb-recomendador"></div>
-          <h3>Recomendador</h3>
-          <p>Motor de recomendaciones que cruza tus preferencias con un dataset para sugerirte opciones afines. Incluye una V2 con mejoras sobre la primera versión.</p>
-          <a class="read-more" href="https://recomendador-ten.vercel.app" target="_blank" rel="noopener">Ver demo →</a>
-        </article>
+.email-btn {
+  display: inline-block;
+  border: 1px solid var(--text-primary);
+  color: var(--text-primary);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 8px 18px;
+  border-radius: 999px;
+  margin-bottom: 32px;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+.email-btn:hover { background: var(--coral-400); border-color: var(--coral-400); color: #fff; }
 
-        <article class="project-card">
-          <div class="project-thumb thumb-gasolina"></div>
-          <h3>Gasolina Tracker</h3>
-          <p>Precios oficiales de gasolineras en Euskadi y Navarra: mapa interactivo, filtro por combustible y radio de distancia, y evolución histórica del precio por territorio.</p>
-          <a class="read-more" href="https://gasoradar-teal.vercel.app/" target="_blank" rel="noopener">Ver demo →</a>
-        </article>
+.sidebar-block { margin-bottom: 28px; }
+.sidebar-block h6 {
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+.sidebar-block p { font-size: 14px; line-height: 1.6; color: var(--text-primary); }
 
-      </div>
-    </section>
+.tag-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.skill-tag {
+  font-size: 12.5px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: var(--coral-50);
+  color: var(--coral-800);
+}
 
-    <section id="experiencia">
-      <h6 class="section-label">Experiencia</h6>
-      <p class="exp-dates">Actualidad</p>
-      <h3 class="exp-title">Data Analyst en Inetum</h3>
-      <p class="exp-desc">Bilbao. Python, Power BI, Tableau, Looker y BigQuery para convertir datos en decisiones y procesos más eficientes.</p>
-      <div class="tag-row">
-        <span class="stack-tag">SQL</span>
-        <span class="stack-tag">Python</span>
-        <span class="stack-tag">Power BI</span>
-        <span class="stack-tag">Tableau</span>
-      </div>
-    </section>
+/* main content */
+.main { flex: 1; padding: 48px 56px; min-width: 0; }
+.main section { margin-bottom: 56px; }
+.section-label {
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 18px;
+}
 
-    <section id="contacto">
-      <h6 class="section-label">Contacto</h6>
-      <p>Escríbeme si quieres hablar de datos, o revisa el código de lo que construyo.</p>
-      <div class="contact-row">
-        <a class="email-btn" href="mailto:jonrio11@gmail.com">jonrio11@gmail.com</a>
-        <a class="linkedin-link" href="https://www.linkedin.com/in/jonriomunoz" target="_blank" rel="noopener">LinkedIn ↗</a>
-      </div>
-    </section>
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
+}
 
-  </main>
+.project-card { display: flex; flex-direction: column; }
+.project-thumb {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: var(--radius);
+  margin-bottom: 14px;
+}
+.thumb-eclipse { background: linear-gradient(135deg, #f0997b, #d85a30); }
+.thumb-recomendador { background: linear-gradient(135deg, #f5c4b3, #993c1d); }
+.thumb-gasolina { background: linear-gradient(135deg, #f0997b 0%, #712b13 100%); }
 
-</div>
+.project-card h3 { font-size: 17px; font-weight: 600; margin-bottom: 8px; }
+.project-card .tag-row { margin-bottom: 10px; }
+.stack-tag {
+  font-size: 12px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--coral-50);
+  color: var(--coral-800);
+}
+.project-card p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-primary);
+  opacity: 0.85;
+  margin-bottom: 10px;
+}
+.read-more { font-size: 14px; font-weight: 500; color: var(--coral-400); }
+.read-more:hover { color: var(--coral-600); }
 
-</body>
-</html>
+/* experiencia */
+.exp-dates { font-size: 13px; color: var(--text-muted); margin-bottom: 4px; }
+.exp-title { font-size: 18px; font-weight: 600; margin-bottom: 8px; }
+.exp-desc { font-size: 14px; line-height: 1.6; color: var(--text-primary); opacity: 0.85; margin-bottom: 14px; max-width: 60ch; }
+
+/* contacto */
+#contacto p { font-size: 15px; color: var(--text-primary); opacity: 0.85; margin-bottom: 18px; max-width: 56ch; }
+.contact-row { display: flex; gap: 18px; align-items: center; flex-wrap: wrap; }
+.linkedin-link { font-size: 14px; font-weight: 500; color: var(--coral-400); }
+.linkedin-link:hover { color: var(--coral-600); }
+
+@media (max-width: 860px) {
+  .layout { flex-direction: column; }
+  .sidebar {
+    position: static;
+    height: auto;
+    flex: none;
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--sidebar-border);
+  }
+  .main { padding: 32px 24px; }
+  .project-grid { grid-template-columns: 1fr; }
+}
