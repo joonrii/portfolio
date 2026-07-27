@@ -1,6 +1,7 @@
 # Jon Rio — Portfolio
 
 Portfolio personal de Jon Rio, Data Analyst en Inetum (Bilbao). Sitio estático, sin build ni frameworks: HTML y CSS puros.
+<img width="1898" height="578" alt="image" src="https://github.com/user-attachments/assets/5d08234a-5351-45fd-a0c9-4f69c96fa55e" />
 
 🔗 **Demo:** [jonri-portfolio-jonri.vercel.app](https://jonri-portfolio-jonri.vercel.app)
 
