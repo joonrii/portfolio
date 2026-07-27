@@ -19,7 +19,9 @@
 
 body {
   margin: 0;
-  background: var(--main-bg);
+  background-color: var(--main-bg);
+  background-image: radial-gradient(circle, rgba(58, 51, 42, 0.07) 1px, transparent 1px);
+  background-size: 22px 22px;
   color: var(--text-primary);
   font-family: "Inter", system-ui, sans-serif;
   font-size: 15px;
@@ -179,7 +181,14 @@ a { text-decoration: none; }
   gap: 28px;
 }
 
-.project-card { display: flex; flex-direction: column; height: 100%; }
+.project-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transform: perspective(800px) rotateX(0deg) rotateY(0deg);
+  transition: transform 0.15s ease-out;
+  will-change: transform;
+}
 .project-thumb {
   width: 100%;
   aspect-ratio: 16 / 10;
