@@ -58,8 +58,70 @@ a { text-decoration: none; }
 }
 
 .name { font-size: 24px; font-weight: 600; margin-bottom: 6px; }
-.role { font-size: 15px; color: var(--text-primary); margin-bottom: 3px; }
-.location { font-size: 13px; color: var(--text-muted); margin-bottom: 18px; }
+.role { font-size: 15px; color: var(--text-primary); margin-bottom: 3px; transition: opacity 0.22s ease; }
+.location { font-size: 13px; color: var(--text-muted); margin-bottom: 6px; }
+
+.status-line {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12.5px;
+  color: var(--text-muted);
+  margin-bottom: 18px;
+}
+.status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #4a9b6e;
+  flex: none;
+  animation: statusPulse 2s ease-in-out infinite;
+}
+@keyframes statusPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(74, 155, 110, 0.5); }
+  50% { box-shadow: 0 0 0 4px rgba(74, 155, 110, 0); }
+}
+
+.thumb-wrap {
+  overflow: hidden;
+  border-radius: var(--radius);
+  margin-bottom: 14px;
+}
+.thumb-wrap .project-thumb {
+  margin-bottom: 0;
+  transition: transform 0.35s ease;
+}
+.project-card:hover .project-thumb { transform: scale(1.06); }
+
+.skill-tag { display: inline-block; transition: transform 0.15s ease; }
+.skill-tag:hover { animation: tagBounce 0.4s ease; }
+@keyframes tagBounce {
+  0% { transform: translateY(0); }
+  35% { transform: translateY(-5px); }
+  60% { transform: translateY(0); }
+  80% { transform: translateY(-2px); }
+  100% { transform: translateY(0); }
+}
+
+.confetti-piece {
+  position: fixed;
+  width: 7px;
+  height: 7px;
+  border-radius: 2px;
+  pointer-events: none;
+  z-index: 999;
+  animation: confettiBurst 0.65s ease-out forwards;
+}
+@keyframes confettiBurst {
+  0% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
+  100% { transform: translate(var(--dx), var(--dy)) rotate(var(--rot)); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .status-dot { animation: none; }
+  .project-card:hover .project-thumb { transform: none; }
+  .skill-tag:hover { animation: none; }
+}
 
 .social-row { display: flex; gap: 14px; margin-bottom: 16px; }
 .social-row a { color: var(--text-primary); display: inline-flex; }
