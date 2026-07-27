@@ -123,12 +123,11 @@ a { text-decoration: none; }
 .project-thumb {
   width: 100%;
   aspect-ratio: 16 / 10;
+  object-fit: cover;
   border-radius: var(--radius);
   margin-bottom: 14px;
+  display: block;
 }
-.thumb-eclipse { background: linear-gradient(135deg, #f0997b, #d85a30); }
-.thumb-recomendador { background: linear-gradient(135deg, #f5c4b3, #993c1d); }
-.thumb-gasolina { background: linear-gradient(135deg, #f0997b 0%, #712b13 100%); }
 
 .project-card h3 { font-size: 17px; font-weight: 600; margin-bottom: 8px; }
 .project-card .tag-row { margin-bottom: 10px; }
