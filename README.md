@@ -16,9 +16,10 @@ Portfolio personal de Jon Rio, Data Analyst en Inetum (Bilbao). Sitio estático,
 ├── sprite.png              # Sprite original de Jon caminando (6 fotogramas)
 ├── sprite-walk.png         # Sprite normalizado (6 × 72×128 px) que usa la animación
 ├── hero.webp               # Banner pixel art — se usa como imagen al compartir (og:image)
-├── proj-eclipse.jpg        # Imagen — proyecto Eclipse Solar España
-├── proj-recomendador.jpg   # Imagen — proyecto Recomendador
-├── proj-gasolina.jpg       # Imagen — proyecto Gasolina Tracker
+├── cover-gasolinago.webp   # Portada — GasolinaGo (captura real, 960×600)
+├── cover-tlvc.webp         # Portada — The Last Video Club
+├── cover-sesion.webp       # Portada — Sesión Continua
+├── cover-eclipse.webp      # Portada — Eclipse Solar España
 └── README.md
 ```
 
@@ -29,7 +30,7 @@ Sin `package.json`, sin dependencias, sin paso de compilación. Abrir `index.htm
 | Sección | Contenido |
 |---|---|
 | **Héroe** | Nombre, rol con efecto máquina de escribir, bio, CTAs y redes. A la derecha, un mini juego pixel: Jon camina por la ciudad (de noche en modo oscuro, de día en claro); al pulsarlo salta y gana XP, con logros a los 10, 30 y 100 saltos |
-| **Proyectos** | Tarjetas con imagen, etiquetas, descripción y enlace a cada demo desplegada |
+| **Proyectos** | GasolinaGo, The Last Video Club, Sesión Continua y Eclipse Solar España: portada, etiquetas, descripción y enlace a cada web |
 | **Qué hago** | Los cuatro pasos (Análisis → Visualización → Insights → Decisiones) con mini gráficos animados y herramientas |
 | **Trayectoria** | Experiencia en línea de tiempo + formación en tarjetas |
 | **Contacto** | Botón para copiar el email, LinkedIn y GitHub |
@@ -39,7 +40,7 @@ Sin `package.json`, sin dependencias, sin paso de compilación. Abrir `index.htm
 Todo el texto está directamente en `index.html` — no hay CMS ni datos externos. Para:
 
 - **Cambiar texto** (bio, descripciones, experiencia): edita el HTML correspondiente en `index.html`.
-- **Añadir un proyecto**: duplica un bloque `<article class="project spot" data-reveal>` dentro de `#proyectos`, cambia imagen (640×400), etiquetas, título, enlace, descripción y el número (`04`, `05`…). Sube `--i` en el `style` para que entre escalonado.
+- **Añadir un proyecto**: duplica un bloque `<article class="project spot" data-reveal>` dentro de `#proyectos`, cambia la portada (captura de la web recortada a 16:10, 960×600 en `.webp`), etiquetas, título, enlace, descripción y el número (`04`, `05`…). Sube `--i` en el `style` para que entre escalonado.
 - **Cambiar los roles del héroe**: array `roles` en `script.js`.
 - **Cambiar colores**: los tokens están al principio de `style.css` (`:root` para el modo oscuro y `:root[data-theme="light"]` para el claro).
 
