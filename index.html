@@ -4,228 +4,422 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Jon Rio — Data Analyst</title>
-<meta name="description" content="Jon Rio, Data Analyst en Inetum, Bilbao. Portfolio de proyectos de datos." />
+<meta name="description" content="Jon Rio, Data Analyst en Inetum (Bilbao). Portfolio de proyectos de datos construidos con vibe coding." />
+<meta name="theme-color" content="#070818" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Jon Rio — Data Analyst" />
+<meta property="og:description" content="Convierto datos en decisiones. Proyectos, experiencia y contacto." />
+<meta property="og:image" content="https://portfolio-seven-ashen-52.vercel.app/hero.webp" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b6cff'/%3E%3Cstop offset='.55' stop-color='%23ff5fa2'/%3E%3Cstop offset='1' stop-color='%23ffb547'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='8' fill='url(%23g)'/%3E%3Ctext x='16' y='21.5' text-anchor='middle' font-family='monospace' font-weight='700' font-size='14' fill='%23fff'%3EJR%3C/text%3E%3C/svg%3E" />
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Silkscreen:wght@400;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css" />
+
+<script>
+  // Tema antes de pintar (evita parpadeo): preferencia guardada o la del sistema
+  (function () {
+    var d = document.documentElement, t;
+    d.classList.add('js');
+    try { t = localStorage.getItem('theme'); } catch (e) {}
+    if (t !== 'light' && t !== 'dark') {
+      t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+    }
+    d.dataset.theme = t;
+  })();
+</script>
+<script src="script.js" defer></script>
 </head>
 <body>
 
-<div class="layout">
+<a class="skip-link" href="#proyectos">Saltar a los proyectos</a>
 
-  <aside class="sidebar">
-    <img class="avatar" src="avatar.jpg" alt="Jon Rio" />
-    <h1 class="name">Jon Rio</h1>
-    <p class="role" id="role-text">Data Analyst en Inetum</p>
-    <p class="location">Bilbao, España</p>
-    <p class="status-line"><span class="status-dot" aria-hidden="true"></span>Disponible para hablar de datos</p>
-
-    <div class="social-row">
-      <a href="https://www.linkedin.com/in/jonriomunoz" target="_blank" rel="noopener" aria-label="LinkedIn">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
-      </a>
-      <a href="mailto:jonrio11@gmail.com" aria-label="Email">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg>
-      </a>
-    </div>
-    <a class="email-btn" id="cta-escribeme" href="mailto:jonrio11@gmail.com">Escríbeme</a>
-
-    <div class="sidebar-block">
-      <h6>Sobre mí</h6>
-      <p>Data Analyst en Inetum. Graduado en ADE, con un Máster en Business Analytics por Mondragon Unibertsitatea. Convierto datos en decisiones y disfruto construyendo mis propios proyectos con vibe coding.</p>
-    </div>
-
-    <div class="sidebar-block">
-      <h6>Skills</h6>
-      <div class="tag-row">
-        <span class="skill-tag">Python</span>
-        <span class="skill-tag">SQL</span>
-        <span class="skill-tag">Power BI</span>
-        <span class="skill-tag">Tableau</span>
-        <span class="skill-tag">Looker</span>
-        <span class="skill-tag">BigQuery</span>
-      </div>
-    </div>
-  </aside>
-
-  <main class="main">
-
-    <section id="proyectos">
-      <h6 class="section-label">Proyectos</h6>
-      <div class="project-grid">
-
-        <article class="project-card">
-          <a class="thumb-wrap" href="https://eclipsesolarespana-wine.vercel.app" target="_blank" rel="noopener" aria-label="Abrir demo — Eclipse Solar España"><img class="project-thumb" src="proj-eclipse.jpg" alt="Eclipse solar" loading="lazy" /></a>
-          <h3>Eclipse Solar España</h3>
-          <p>Horarios, trayectoria y datos clave del eclipse solar visible desde España, en una página pensada para consultarse en segundos.</p>
-          <a class="read-more" href="https://eclipsesolarespana-wine.vercel.app" target="_blank" rel="noopener">Ver demo<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"></path></svg></a>
-        </article>
-
-        <article class="project-card">
-          <a class="thumb-wrap" href="https://recomendador-ten.vercel.app" target="_blank" rel="noopener" aria-label="Abrir demo — Recomendador"><img class="project-thumb" src="proj-recomendador.jpg" alt="Pantallas de streaming, mando a distancia" loading="lazy" /></a>
-          <h3>Recomendador</h3>
-          <p>Motor de recomendaciones que cruza tus preferencias con un dataset para sugerirte opciones afines. Incluye una V2 con mejoras sobre la primera versión.</p>
-          <a class="read-more" href="https://recomendador-ten.vercel.app" target="_blank" rel="noopener">Ver demo<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"></path></svg></a>
-        </article>
-
-        <article class="project-card">
-          <a class="thumb-wrap" href="https://gasoradar-teal.vercel.app/" target="_blank" rel="noopener" aria-label="Abrir demo — Gasolina Tracker"><img class="project-thumb" src="proj-gasolina.jpg" alt="Repostando gasolina" loading="lazy" /></a>
-          <h3>Gasolina Tracker</h3>
-          <p>Precios oficiales de gasolineras en Euskadi y Navarra: mapa interactivo, filtro por combustible y radio de distancia, y evolución histórica del precio por territorio.</p>
-          <a class="read-more" href="https://gasoradar-teal.vercel.app/" target="_blank" rel="noopener">Ver demo<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"></path></svg></a>
-        </article>
-
-      </div>
-    </section>
-
-    <section id="experiencia">
-      <h6 class="section-label">Experiencia</h6>
-
-      <div class="timeline">
-
-        <div class="timeline-item">
-          <p class="exp-dates">Sep 2025 — Actualidad</p>
-          <h3 class="exp-title">Consultor Data Analyst (BBVA)</h3>
-          <p class="exp-company">Inetum · Bilbao</p>
-        </div>
-
-        <div class="timeline-item">
-          <p class="exp-dates">Ene 2024 — Oct 2025</p>
-          <h3 class="exp-title">Data Analyst</h3>
-          <p class="exp-company">Sandbox Group · Bilbao</p>
-          <ul class="exp-list">
-            <li>Análisis de datos de usuario con Google Analytics 4 (GA4) para entender la interacción de jugadores.</li>
-            <li>Dashboards interactivos y visualización de datos con Looker Studio.</li>
-            <li>Consultas SQL complejas y gestión de grandes volúmenes de datos con BigQuery.</li>
-            <li>Colaboración con desarrollo, marketing y producto para optimizar monetización y retención.</li>
-            <li>Optimización de parámetros con Firebase (test A/B, remote config).</li>
-          </ul>
-        </div>
-
-        <div class="timeline-item">
-          <p class="exp-dates">Abr 2023 — Jul 2023</p>
-          <h3 class="exp-title">Administrativo de producción</h3>
-          <p class="exp-company">Remica · Bilbao</p>
-        </div>
-
-        <div class="timeline-item">
-          <p class="exp-dates">Ene 2023 — Abr 2023</p>
-          <h3 class="exp-title">Becario de proyectos</h3>
-          <p class="exp-company">Elkar-Lan, S. Coop · Bilbao</p>
-        </div>
-
-      </div>
-    </section>
-
-    <section id="educacion">
-      <h6 class="section-label">Educación</h6>
-
-      <div class="edu-grid">
-
-        <div class="edu-card">
-          <h3 class="edu-title">Máster en Business Analytics</h3>
-          <p class="edu-school">Mondragon Unibertsitatea</p>
-        </div>
-
-        <div class="edu-card">
-          <h3 class="edu-title">Grado en Administración y Dirección de Empresas</h3>
-          <p class="edu-school">Facultad de CC. Económicas y Empresariales, UPV/EHU</p>
-          <p class="edu-dates">Sep 2019 — Jun 2023</p>
-        </div>
-
-        <div class="edu-card">
-          <h3 class="edu-title">Bachelor of Business Administration (intercambio)</h3>
-          <p class="edu-school">Université de Bordeaux</p>
-          <p class="edu-dates">Sep 2021 — Ene 2022</p>
-        </div>
-
-      </div>
-    </section>
-
-    <section id="contacto">
-      <h6 class="section-label">Contacto</h6>
-      <p>Escríbeme si quieres hablar de datos, o revisa el código de lo que construyo.</p>
-      <div class="contact-row">
-        <a class="email-btn" href="mailto:jonrio11@gmail.com">jonrio11@gmail.com</a>
-        <a class="linkedin-link" href="https://www.linkedin.com/in/jonriomunoz" target="_blank" rel="noopener">LinkedIn ↗</a>
-      </div>
-    </section>
-
-  </main>
-
+<!-- Capa ambiente: blobs de color, estrellas pixel y rejilla -->
+<div class="bg" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+  <div class="stars" id="bg-stars"></div>
+  <div class="bg-grid"></div>
 </div>
 
-<script>
-  // --- Subtítulo rotativo ---
-  (function () {
-    var roleEl = document.getElementById('role-text');
-    var variants = ['Data Analyst en Inetum', 'Vibe Coder', 'Convierto datos en decisiones'];
-    var i = 0;
-    if (roleEl && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      setInterval(function () {
-        i = (i + 1) % variants.length;
-        roleEl.style.opacity = '0';
-        setTimeout(function () {
-          roleEl.textContent = variants[i];
-          roleEl.style.opacity = '1';
-        }, 220);
-      }, 3200);
-    }
-  })();
+<header class="nav-wrap">
+  <nav class="nav" aria-label="Principal">
+    <a class="brand" href="#inicio" aria-label="Jon Rio, volver al inicio">
+      <span class="brand-mark" aria-hidden="true">JR</span>
+      <span class="brand-name">Jon Rio</span>
+    </a>
 
-  // --- Confeti al pulsar Escríbeme ---
-  (function () {
-    var btn = document.getElementById('cta-escribeme');
-    if (!btn) return;
-    var colors = ['#d85a30', '#f0997b', '#712b13', '#e8d9c5', '#3a332a'];
-    btn.addEventListener('click', function () {
-      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-      var rect = btn.getBoundingClientRect();
-      var originX = rect.left + rect.width / 2;
-      var originY = rect.top + rect.height / 2;
-      for (var n = 0; n < 22; n++) {
-        var piece = document.createElement('span');
-        piece.className = 'confetti-piece';
-        piece.style.left = originX + 'px';
-        piece.style.top = originY + 'px';
-        piece.style.background = colors[Math.floor(Math.random() * colors.length)];
-        var angle = Math.random() * Math.PI * 2;
-        var dist = 70 + Math.random() * 90;
-        piece.style.setProperty('--dx', (Math.cos(angle) * dist) + 'px');
-        piece.style.setProperty('--dy', (Math.sin(angle) * dist - 40) + 'px');
-        piece.style.setProperty('--rot', (Math.random() * 480 - 240) + 'deg');
-        document.body.appendChild(piece);
-        (function (el) {
-          setTimeout(function () { el.remove(); }, 700);
-        })(piece);
-      }
-    });
-  })();
+    <div class="nav-links">
+      <span class="nav-pill" aria-hidden="true"></span>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#que-hago">Qué hago</a>
+      <a href="#trayectoria">Trayectoria</a>
+      <a href="#contacto">Contacto</a>
+    </div>
 
-  // --- easter egg ---
-  console.log('%c👋 Hola, curioso.', 'font-size:14px;font-weight:600;color:#d85a30;');
-  console.log('Si estás mirando el código, seguramente también te gusta construir cosas. Hablemos: jonrio11@gmail.com');
+    <div class="nav-actions">
+      <button class="icon-btn theme-toggle" id="theme-toggle" type="button" aria-label="Cambiar tema">
+        <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+      <a class="btn btn-primary btn-sm" href="mailto:jonrio11@gmail.com" data-confetti>Escríbeme</a>
+    </div>
 
-  // --- Tilt 3D en tarjetas de proyecto ---
-  (function () {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    var MAX_TILT = 7;
-    document.querySelectorAll('.project-card').forEach(function (card) {
-      card.addEventListener('mousemove', function (e) {
-        var r = card.getBoundingClientRect();
-        var px = (e.clientX - r.left) / r.width;
-        var py = (e.clientY - r.top) / r.height;
-        var rotY = (px - 0.5) * MAX_TILT * 2;
-        var rotX = (0.5 - py) * MAX_TILT * 2;
-        card.style.transform = 'perspective(800px) rotateX(' + rotX.toFixed(2) + 'deg) rotateY(' + rotY.toFixed(2) + 'deg)';
-      });
-      card.addEventListener('mouseleave', function () {
-        card.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg)';
-      });
-    });
-  })();
-</script>
+    <span class="nav-progress" aria-hidden="true"></span>
+  </nav>
+</header>
+
+<main id="inicio">
+
+  <!-- ============ HÉROE ============ -->
+  <section class="hero container">
+    <div class="hero-copy">
+      <p class="status hero-in" style="--i:0"><span class="status-dot" aria-hidden="true"></span>Disponible para hablar de datos</p>
+      <p class="eyebrow hero-in" style="--i:1">Hola, soy</p>
+      <h1 class="hero-title hero-in" style="--i:2">Jon <span class="grad">Rio</span></h1>
+      <p class="hero-role hero-in" style="--i:3">
+        <span class="sr-only">Data Analyst en Inetum</span>
+        <span aria-hidden="true"><span id="role-text">Data Analyst en Inetum</span><span class="caret"></span></span>
+      </p>
+      <p class="hero-bio hero-in" style="--i:4">
+        Graduado en ADE, con un Máster en Business Analytics por Mondragon Unibertsitatea.
+        Convierto datos en decisiones y disfruto construyendo mis propios proyectos con <strong>vibe coding</strong>.
+      </p>
+      <div class="hero-ctas hero-in" style="--i:5">
+        <a class="btn btn-primary" href="#proyectos">
+          Ver proyectos
+          <svg class="i-down" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+        </a>
+        <a class="btn btn-ghost" id="cta-escribeme" href="mailto:jonrio11@gmail.com" data-confetti>Escríbeme</a>
+      </div>
+      <div class="hero-meta hero-in" style="--i:6">
+        <div class="socials">
+          <a class="icon-btn" href="https://www.linkedin.com/in/jonriomunoz" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg class="fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+          </a>
+          <a class="icon-btn" href="https://github.com/joonrii" target="_blank" rel="noopener" aria-label="GitHub">
+            <svg class="fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.8 1.19 1.83 1.19 3.09 0 4.42-2.69 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"/></svg>
+          </a>
+          <a class="icon-btn" href="mailto:jonrio11@gmail.com" aria-label="Email">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+          </a>
+        </div>
+        <p class="location">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+          Bilbao, España
+        </p>
+      </div>
+    </div>
+
+    <!-- Mini juego pixel: Jon camina por la ciudad; de noche en modo oscuro, de día en claro -->
+    <aside class="player hero-in" style="--i:3" aria-label="Mini juego: Jon en pixel art">
+      <div class="player-card" id="player-card">
+        <div class="hud">
+          <div class="hearts" aria-hidden="true">
+            <svg viewBox="0 0 7 6"><path d="M1 0h2v1H1zM4 0h2v1H4zM0 1h7v2H0zM1 3h5v1H1zM2 4h3v1H2zM3 5h1v1H3z"/><path class="shine" d="M1 1h1v1H1z"/></svg>
+            <svg viewBox="0 0 7 6"><path d="M1 0h2v1H1zM4 0h2v1H4zM0 1h7v2H0zM1 3h5v1H1zM2 4h3v1H2zM3 5h1v1H3z"/><path class="shine" d="M1 1h1v1H1z"/></svg>
+            <svg viewBox="0 0 7 6"><path d="M1 0h2v1H1zM4 0h2v1H4zM0 1h7v2H0zM1 3h5v1H1zM2 4h3v1H2zM3 5h1v1H3z"/><path class="shine" d="M1 1h1v1H1z"/></svg>
+            <svg viewBox="0 0 7 6"><path d="M1 0h2v1H1zM4 0h2v1H4zM0 1h7v2H0zM1 3h5v1H1zM2 4h3v1H2zM3 5h1v1H3z"/><path class="shine" d="M1 1h1v1H1z"/></svg>
+            <svg viewBox="0 0 7 6"><path d="M1 0h2v1H1zM4 0h2v1H4zM0 1h7v2H0zM1 3h5v1H1zM2 4h3v1H2zM3 5h1v1H3z"/><path class="shine" d="M1 1h1v1H1z"/></svg>
+          </div>
+          <p class="xp">XP <span id="xp-value">0000</span></p>
+        </div>
+
+        <div class="screen" id="screen">
+          <div class="sky-stars" id="sky-stars" aria-hidden="true"></div>
+          <div class="orb" aria-hidden="true"></div>
+          <div class="cloud cloud-1" aria-hidden="true"></div>
+          <div class="cloud cloud-2" aria-hidden="true"></div>
+          <svg class="city" id="city" aria-hidden="true"></svg>
+          <div class="ground" aria-hidden="true"></div>
+          <p class="press-start" id="press-start" aria-hidden="true">Pulsa a Jon para saltar</p>
+          <div class="walker">
+            <span class="shadow" aria-hidden="true"></span>
+            <button class="jumper" id="jumper" type="button" aria-label="Hacer saltar a Jon">
+              <span class="sprite" aria-hidden="true"></span>
+            </button>
+          </div>
+        </div>
+
+        <div class="player-info">
+          <img class="avatar" src="avatar.jpg" alt="Foto de Jon Rio" width="52" height="52" />
+          <div>
+            <p class="pi-name">Jon Rio</p>
+            <p class="pi-role">Data Analyst · Bilbao</p>
+          </div>
+          <span class="pi-online"><span class="status-dot" aria-hidden="true"></span>Online</span>
+        </div>
+
+        <div class="inventory">
+          <p class="inv-title">Inventario</p>
+          <ul class="inv">
+            <li>Python</li>
+            <li>SQL</li>
+            <li>Power BI</li>
+            <li>Tableau</li>
+            <li>Looker</li>
+            <li>BigQuery</li>
+          </ul>
+        </div>
+      </div>
+    </aside>
+  </section>
+
+  <!-- ============ PROYECTOS ============ -->
+  <section class="section container" id="proyectos">
+    <header class="section-head" data-reveal>
+      <p class="eyebrow">Proyectos</p>
+      <h2>Cosas que he <span class="grad">construido</span></h2>
+      <p class="lead">Proyectos personales, de la idea al despliegue, hechos con vibe coding.</p>
+    </header>
+
+    <div class="projects">
+
+      <article class="project spot" data-reveal style="--i:0">
+        <div class="project-media">
+          <img src="proj-eclipse.jpg" alt="" width="640" height="400" loading="lazy" />
+          <span class="project-num">01</span>
+        </div>
+        <div class="project-body">
+          <ul class="tags"><li>HTML · CSS · JS</li><li>Divulgación</li></ul>
+          <h3><a href="https://eclipsesolarespana-wine.vercel.app" target="_blank" rel="noopener">Eclipse Solar España</a></h3>
+          <p>Horarios, trayectoria y datos clave del eclipse solar visible desde España, en una página pensada para consultarse en segundos.</p>
+          <span class="project-cta">Ver demo <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M7 7h10v10"/></svg></span>
+        </div>
+      </article>
+
+      <article class="project spot" data-reveal style="--i:1">
+        <div class="project-media">
+          <img src="proj-recomendador.jpg" alt="" width="640" height="400" loading="lazy" />
+          <span class="project-num">02</span>
+        </div>
+        <div class="project-body">
+          <ul class="tags"><li>Next.js</li><li>Tailwind</li><li>Recomendación</li></ul>
+          <h3><a href="https://recomendador-ten.vercel.app" target="_blank" rel="noopener">Recomendador</a></h3>
+          <p>Motor de recomendaciones que cruza tus preferencias con un dataset para sugerirte opciones afines. Incluye una V2 con mejoras sobre la primera versión.</p>
+          <span class="project-cta">Ver demo <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M7 7h10v10"/></svg></span>
+        </div>
+      </article>
+
+      <article class="project spot" data-reveal style="--i:2">
+        <div class="project-media">
+          <img src="proj-gasolina.jpg" alt="" width="640" height="400" loading="lazy" />
+          <span class="project-num">03</span>
+        </div>
+        <div class="project-body">
+          <ul class="tags"><li>Next.js</li><li>Leaflet</li><li>Datos abiertos</li></ul>
+          <h3><a href="https://gasoradar-teal.vercel.app/" target="_blank" rel="noopener">Gasolina Tracker</a></h3>
+          <p>Precios oficiales de gasolineras en Euskadi y Navarra: mapa interactivo, filtro por combustible y radio de distancia, y evolución histórica del precio por territorio.</p>
+          <span class="project-cta">Ver demo <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M7 7h10v10"/></svg></span>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ============ QUÉ HAGO ============ -->
+  <section class="section container" id="que-hago">
+    <header class="section-head" data-reveal>
+      <p class="eyebrow">Qué hago</p>
+      <h2>Del dato a la <span class="grad">decisión</span></h2>
+      <p class="lead">Mi día a día como Data Analyst, en cuatro pasos.</p>
+    </header>
+
+    <ol class="pillars">
+      <li class="pillar spot" data-reveal style="--i:0">
+        <svg class="viz viz-bars" viewBox="0 0 120 64" aria-hidden="true">
+          <rect x="8" y="44" width="14" height="16" rx="2"/>
+          <rect x="30" y="36" width="14" height="24" rx="2"/>
+          <rect x="52" y="30" width="14" height="30" rx="2"/>
+          <rect x="74" y="20" width="14" height="40" rx="2"/>
+          <rect x="96" y="6" width="14" height="54" rx="2"/>
+          <path class="axis" d="M4 61h112"/>
+        </svg>
+        <span class="pillar-step">01</span>
+        <h3>Análisis</h3>
+        <p>Exploro datos para entender qué está pasando.</p>
+        <p class="pillar-tools">Python · SQL · BigQuery</p>
+      </li>
+      <li class="pillar spot" data-reveal style="--i:1">
+        <svg class="viz viz-donut" viewBox="0 0 120 64" aria-hidden="true">
+          <g transform="rotate(-90 60 32)">
+            <circle class="seg seg-1" cx="60" cy="32" r="22" pathLength="100" style="--len:44;--off:0"/>
+            <circle class="seg seg-2" cx="60" cy="32" r="22" pathLength="100" style="--len:26;--off:-44"/>
+            <circle class="seg seg-3" cx="60" cy="32" r="22" pathLength="100" style="--len:18;--off:-70"/>
+            <circle class="seg seg-4" cx="60" cy="32" r="22" pathLength="100" style="--len:12;--off:-88"/>
+          </g>
+        </svg>
+        <span class="pillar-step">02</span>
+        <h3>Visualización</h3>
+        <p>Transformo datos complejos en visualizaciones claras.</p>
+        <p class="pillar-tools">Power BI · Tableau · Looker Studio</p>
+      </li>
+      <li class="pillar spot" data-reveal style="--i:2">
+        <svg class="viz viz-scatter" viewBox="0 0 120 64" aria-hidden="true">
+          <path class="trend" d="M10 54 L110 12" pathLength="1"/>
+          <circle cx="14" cy="50" r="3.5" style="--d:0"/>
+          <circle cx="28" cy="40" r="3.5" style="--d:1"/>
+          <circle cx="40" cy="47" r="3.5" style="--d:2"/>
+          <circle cx="54" cy="34" r="3.5" style="--d:3"/>
+          <circle cx="66" cy="38" r="3.5" style="--d:4"/>
+          <circle cx="80" cy="24" r="3.5" style="--d:5"/>
+          <circle cx="92" cy="28" r="3.5" style="--d:6"/>
+          <circle class="hot" cx="106" cy="12" r="4.5" style="--d:7"/>
+        </svg>
+        <span class="pillar-step">03</span>
+        <h3>Insights</h3>
+        <p>Descubro patrones y oportunidades que generan valor.</p>
+        <p class="pillar-tools">GA4 · Firebase · Looker Studio</p>
+      </li>
+      <li class="pillar spot" data-reveal style="--i:3">
+        <svg class="viz viz-line" viewBox="0 0 120 64" aria-hidden="true">
+          <path class="area" d="M8 52 L30 44 L50 48 L72 30 L92 26 L110 10 L110 60 L8 60 Z"/>
+          <path class="line" d="M8 52 L30 44 L50 48 L72 30 L92 26 L110 10" pathLength="1"/>
+          <circle class="goal-ring" cx="110" cy="10" r="5"/>
+          <circle class="goal" cx="110" cy="10" r="3.5"/>
+        </svg>
+        <span class="pillar-step">04</span>
+        <h3>Decisiones</h3>
+        <p>Ayudo a tomar decisiones basadas en datos, no en suposiciones.</p>
+        <p class="pillar-tools">Test A/B · Remote Config</p>
+      </li>
+    </ol>
+  </section>
+
+  <!-- ============ TRAYECTORIA ============ -->
+  <section class="section container" id="trayectoria">
+    <header class="section-head" data-reveal>
+      <p class="eyebrow">Trayectoria</p>
+      <h2>Experiencia y <span class="grad">formación</span></h2>
+    </header>
+
+    <div class="career">
+      <div class="career-col">
+        <h3 class="col-title" data-reveal>Experiencia</h3>
+        <ol class="timeline" data-draw>
+
+          <li class="t-item is-current" data-reveal style="--i:0">
+            <span class="t-dot" aria-hidden="true"></span>
+            <div class="t-card">
+              <p class="t-dates">Sep 2025 — Actualidad <span class="badge-now"><span class="status-dot" aria-hidden="true"></span>Actual</span></p>
+              <h4>Consultor Data Analyst <span class="t-client">(BBVA)</span></h4>
+              <p class="t-org">Inetum · Bilbao</p>
+            </div>
+          </li>
+
+          <li class="t-item" data-reveal style="--i:1">
+            <span class="t-dot" aria-hidden="true"></span>
+            <div class="t-card">
+              <p class="t-dates">Ene 2024 — Oct 2025</p>
+              <h4>Data Analyst</h4>
+              <p class="t-org">Sandbox Group · Bilbao</p>
+              <ul class="t-list">
+                <li>Análisis de datos de usuario con Google Analytics 4 (GA4) para entender la interacción de jugadores.</li>
+                <li>Dashboards interactivos y visualización de datos con Looker Studio.</li>
+                <li>Consultas SQL complejas y gestión de grandes volúmenes de datos con BigQuery.</li>
+                <li>Colaboración con desarrollo, marketing y producto para optimizar monetización y retención.</li>
+                <li>Optimización de parámetros con Firebase (test A/B, remote config).</li>
+              </ul>
+              <ul class="tags"><li>GA4</li><li>Looker Studio</li><li>SQL</li><li>BigQuery</li><li>Firebase</li></ul>
+            </div>
+          </li>
+
+          <li class="t-item" data-reveal style="--i:2">
+            <span class="t-dot" aria-hidden="true"></span>
+            <div class="t-card">
+              <p class="t-dates">Abr 2023 — Jul 2023</p>
+              <h4>Administrativo de producción</h4>
+              <p class="t-org">Remica · Bilbao</p>
+            </div>
+          </li>
+
+          <li class="t-item" data-reveal style="--i:3">
+            <span class="t-dot" aria-hidden="true"></span>
+            <div class="t-card">
+              <p class="t-dates">Ene 2023 — Abr 2023</p>
+              <h4>Becario de proyectos</h4>
+              <p class="t-org">Elkar-Lan, S. Coop · Bilbao</p>
+            </div>
+          </li>
+
+        </ol>
+      </div>
+
+      <div class="career-col">
+        <h3 class="col-title" data-reveal>Formación</h3>
+        <ul class="edu">
+          <li class="edu-card spot" data-reveal style="--i:0">
+            <span class="edu-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"/><path d="M22 9v6"/></svg></span>
+            <div>
+              <h4>Máster en Business Analytics</h4>
+              <p class="edu-school">Mondragon Unibertsitatea</p>
+            </div>
+          </li>
+          <li class="edu-card spot" data-reveal style="--i:1">
+            <span class="edu-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"/><path d="M22 9v6"/></svg></span>
+            <div>
+              <h4>Grado en Administración y Dirección de Empresas</h4>
+              <p class="edu-school">Facultad de CC. Económicas y Empresariales, UPV/EHU</p>
+              <p class="edu-dates">Sep 2019 — Jun 2023</p>
+            </div>
+          </li>
+          <li class="edu-card spot" data-reveal style="--i:2">
+            <span class="edu-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg></span>
+            <div>
+              <h4>Bachelor of Business Administration <span class="t-client">(intercambio)</span></h4>
+              <p class="edu-school">Université de Bordeaux</p>
+              <p class="edu-dates">Sep 2021 — Ene 2022</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACTO ============ -->
+  <section class="section container" id="contacto">
+    <div class="contact-card" data-reveal>
+      <div class="contact-glow" aria-hidden="true"></div>
+      <p class="eyebrow">Contacto</p>
+      <h2>¿Hablamos de <span class="grad">datos</span>?</h2>
+      <p class="lead">Escríbeme si quieres hablar de datos, de un proyecto o de una oportunidad. Y si te pica la curiosidad, el código de lo que construyo está en GitHub.</p>
+      <div class="contact-actions">
+        <button class="copy-btn" id="copy-email" type="button" data-email="jonrio11@gmail.com">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+          <span class="copy-label">jonrio11@gmail.com</span>
+          <span class="copy-icon" aria-hidden="true">
+            <svg class="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg>
+            <svg class="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
+          </span>
+        </button>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/jonriomunoz" target="_blank" rel="noopener">LinkedIn <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        <a class="btn btn-ghost" href="https://github.com/joonrii" target="_blank" rel="noopener">GitHub <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+      </div>
+      <p class="copy-status sr-only" id="copy-status" aria-live="polite"></p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer container">
+  <p>© <span id="year">2026</span> Jon Rio · Hecho con vibe coding desde Bilbao</p>
+  <a class="to-top" href="#inicio">Volver arriba <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg></a>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite">
+  <span class="toast-icon" aria-hidden="true">
+    <svg viewBox="0 0 8 8"><path d="M1 0h6v1H1zM0 1h8v1H0zM0 2h1v1H0zM2 2h4v1H2zM7 2h1v1H7zM1 3h6v1H1zM2 4h4v1H2zM3 5h2v2H3zM1 7h6v1H1z"/></svg>
+  </span>
+  <div>
+    <p class="toast-title">Logro desbloqueado</p>
+    <p class="toast-text" id="toast-text"></p>
+  </div>
+</div>
 
 </body>
 </html>
