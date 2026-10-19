@@ -33,7 +33,7 @@ Sin `package.json`, sin dependencias, sin paso de compilación. Abrir `index.htm
 | **Proyectos** | GasolinaGo, The Last Video Club, Sesión Continua y Eclipse Solar España: portada, etiquetas, descripción y enlace a cada web |
 | **Qué hago** | Los cuatro pasos (Análisis → Visualización → Insights → Decisiones) con mini gráficos animados y herramientas |
 | **Trayectoria** | Experiencia en línea de tiempo + formación en tarjetas |
-| **Contacto** | Botón para copiar el email, LinkedIn y GitHub |
+| **Contacto** | Botón para copiar el email y LinkedIn |
 
 ## Editar contenido
 
